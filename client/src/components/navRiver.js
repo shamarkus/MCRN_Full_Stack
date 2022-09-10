@@ -2,23 +2,26 @@ import React from "react";
 
 import "bootstrap/dist/css/bootstrap.css";
 
+import ganaraskaLogo from '../assets/ganaraska.jpg'
+import creditLogo from '../assets/credit.jpg'
+
 import { NavLink } from "react-router-dom";
 
 export default function NavRiver() {
 	return (
 	<div className="wrapper">
 		<nav>
-			<div className="ganaraska-container">
+			<div className="river-container">
 				<NavLink className="ganaraska-nav" to="/ganaraska">
-					<img ></img>
+					<img src={ganaraskaLogo} ></img>
 				</NavLink>
-				<p> ganaraska </p>
+				<p>Ganaraska River</p>
 			</div>
-			<div className="credit-container">
+			<div className="river-container">
 				<NavLink className="credit-nav" to="/credit">
-					<img ></img>
+					<img src={creditLogo}></img>
 				</NavLink>
-				<p> credit  </p>
+				<p>Credit River</p>
 			</div>
 		</nav>
 	</div>

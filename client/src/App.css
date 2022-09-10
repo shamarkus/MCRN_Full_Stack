@@ -6,8 +6,35 @@
 	-webkit-box-sizing: border-box;
 }
 
+body {
+	background-color: #F3F3F4;
+}
+
 .wrapper {
-	margin: 10px 50px 10px 50px;
+	background-color: #9CBCFF;
+	margin: 5% 5% 5% 5%;
+	width: 90%;
 	padding-bottom: 2.5rem;
-	max-width: 100%;
+	float: left;
+	border-radius: 2%;
+	border: 2px solid #9BAAFE;
+}
+
+.river-container {
+	margin: 20px 0 20px 6.66%;
+	width: 40%;
+	float:left;
+	border: 2px solid #000000;
+	border-radius: 4.5%;
+}
+
+.river-container p {
+	width: 100%;
+
+}
+
+img {
+	width: 100%;
+	border-radius: 4%;
+	/*filter: grayscale(0%);*/
 }
