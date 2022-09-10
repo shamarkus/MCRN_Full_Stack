@@ -10,6 +10,7 @@ import { NavLink } from "react-router-dom";
 export default function NavRiver() {
 	return (
 	<div className="wrapper">
+		<p>RiverWatcher + Hydrometric Data</p>
 		<nav>
 			<div className="river-container">
 				<NavLink className="ganaraska-nav" to="/ganaraska">

@@ -17,7 +17,7 @@ body {
 	padding-bottom: 2.5rem;
 	float: left;
 	border-radius: 2%;
-	border: 2px solid #9BAAFE;
+	border: 2px solid #41475E;
 }
 
 .river-container {
@@ -28,13 +28,27 @@ body {
 	border-radius: 4.5%;
 }
 
-.river-container p {
-	width: 100%;
+h1 {
+	margin: 1% 1% 0 1%;
+	color: #F7FABF;
+}
 
+p {
+	text-align: center;
+	margin: 0 0 0 0;
+}
+
+.wrapper p {
+	color: #F7FABF;
+	font-size: 40px;
+}
+
+.river-container p {
+	color: white;
+	font-size: 33px;
 }
 
 img {
 	width: 100%;
 	border-radius: 4%;
-	/*filter: grayscale(0%);*/
 }
