@@ -2,6 +2,7 @@ import React from "react";
 import moment from "moment";
 import "../calendar_orig.css";
 
+let globalDate = 0;
 export default class Calendar extends React.Component {
   weekdayshort = moment.weekdaysShort();
   weekdayshortname = this.weekdayshort.map(day => {
@@ -174,11 +175,11 @@ export default class Calendar extends React.Component {
   };
 
   onDayClick = (e, d) => {
+	  globalDate = d;
 	  this.setState({
 		  selectedDay: d
 	  },
 	  () => {
-		  e.target.closest('td').className += 'selected';
 		  console.log("Selected Day: ", this.state.selectedDay);
 	  });
   };
@@ -203,13 +204,12 @@ export default class Calendar extends React.Component {
     let daysInMonth = [];
     for (let d = 1; d <= this.daysInMonth(); d++) {
       // highlight current day
+      let currentDay = d == globalDate ? "selected" : "";
       daysInMonth.push(
-        <td key={d} className={`calendar-day`}>
-		<span onClick = { e => {
-			this.onDayClick(e, d);
-		}} >
+        <td key={d} className={`calendar-day ${currentDay}`} onClick = { e => {
+		this.onDayClick(e, d);
+	}}>
 		{d}
-		</span>
         </td>
       );
     }
