@@ -176,11 +176,26 @@ export default class Calendar extends React.Component {
 
   onDayClick = (e, d) => {
 	  globalDate = d;
+	  let dayNo = this.state.all
+	  let dateObject = Object.assign({}, this.state.dateObject);
+	  dateObject = moment(dateObject).set("date", d);
 	  this.setState({
-		  selectedDay: d
+		  selectedDay: d,
+		  dateObject: dateObject
 	  },
-	  () => {
-		  console.log("Selected Day: ", this.state.selectedDay);
+	 async () => {
+		console.log("Selected Day: ", this.state.selectedDay);
+		await fetch(`http://localhost:5000/${window.location.href.split('/').pop()}`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ day : dateObject }),
+		})
+		.catch(err => {
+			window.alert(err);
+			return;
+		});
 	  });
   };
 
